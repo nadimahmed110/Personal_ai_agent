@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101827"><meta name="description" content="Your private AI coding agent">
+  <link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/style.css">
+  <title>My Personal AI</title>
+</head>
+<body>
+  <div class="app">
+    <header><div class="brand"><div class="logo">✦</div><div><b>My Personal AI</b><small id="status">Connecting...</small></div></div><button id="settingsBtn" class="icon-btn" aria-label="Settings">⚙</button></header>
+    <main id="chat" aria-live="polite"><div class="welcome"><div class="biglogo">✦</div><h1>কী তৈরি করতে চাও?</h1><p>বাংলা, English অথবা Banglish-এ নির্দেশ দাও। আমি কোড লিখতে ও প্রজেক্ট ফাইলে কাজ করতে পারি।</p><div class="suggestions"><button>একটা সুন্দর portfolio website বানাও</button><button>আমার project-এর bug খুঁজে বের করো</button><button>একটা Android app-এর starter code তৈরি করো</button></div></div></main>
+    <form id="composer"><textarea id="prompt" rows="1" placeholder="তোমার নির্দেশ লিখো..." required></textarea><button id="send" type="submit">➤</button></form>
+    <div class="foot">AI ভুল করতে পারে। গুরুত্বপূর্ণ কোড পরীক্ষা করে নিও।</div>
+  </div>
+  <dialog id="settings">
+    <div class="dialog-head"><h2>তোমার AI-এর নিয়ম</h2><button id="closeSettings" class="icon-btn">✕</button></div>
+    <label>নিজস্ব নির্দেশ / System prompt<textarea id="systemPrompt" rows="5" placeholder="যেমন: সবসময় বাংলায় উত্তর দেবে। কোড লেখার আগে পরিকল্পনা করবে..."></textarea></label>
+    <label class="check"><input id="allowFiles" type="checkbox" checked> ফাইল পড়া ও তালিকা দেখা</label>
+    <label class="check"><input id="allowWrite" type="checkbox" checked> ফাইল তৈরি ও পরিবর্তন</label>
+    <label class="check"><input id="allowTerminal" type="checkbox"> Terminal command চালানো (সার্ভারেও চালু থাকতে হবে)</label>
+    <p class="hint">Terminal চালু করলে AI তোমার সার্ভার OS user-এর অনুমতিতে shell command চালাতে পারবে। শুধু নিজের/বিশ্বস্ত পরিবেশে চালু করো।</p>
+    <button id="saveSettings" class="primary">Save settings</button>
+    <p class="hint">API key এই অ্যাপে নয়, সার্ভারের .env ফাইলে থাকবে।</p>
+  </dialog>
+  <script src="/app.js"></script>
+</body></html>
